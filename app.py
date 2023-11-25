@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, request
-from flask_restx import Api, Resource
 from services import service
 from db import db
 
