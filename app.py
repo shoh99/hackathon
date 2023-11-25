@@ -51,9 +51,11 @@ def get_car_emission():
     car = request.args.get("car")
     version =request.args.get("version")
     distance = request.args.get("distance")
-
+   
     car = car.strip().capitalize()
-    # car = car.capitalize()
+    print(f"Car: {car}")
+    print(f"version: {version} ")
+    print(f"distance {distance}")
     response = service.carbon_calc_for_car(car, version, distance)
 
     response = jsonify(response=response)
