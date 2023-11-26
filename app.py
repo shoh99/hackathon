@@ -6,6 +6,11 @@ from db import db
 app = Flask(__name__)
 
 
+@app.route('/')
+def hello_app():
+    return "Hello Carbon Comission Calculator"
+
+
 @app.route('/api/v1/emission', methods=['GET'])
 def get_transport_emission():
 
