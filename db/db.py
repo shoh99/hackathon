@@ -136,7 +136,28 @@ def insert_car_models(row):
         cursor.close()
         conn.close()
 
+
+def update_transport_data(transport_type, new_emission):
+    conn = get_database_url()
+    cursor = conn.cursor()
+
+    if conn is None:
+        return
+    try:
+        query = '''
+        UPDATE transport
+        SET emission_per_km = %s
+        WHERE transport_type = %s;
+        '''
+        cursor.execute(query, (new_emission, transport_type))
+        conn.commit()
     
+    except Exception as er:
+        print(f"Error: {er}")
+        return None
+    finally:
+        cursor.close()
+        conn.close()
 
 
 def get_unique_manufacturer_list():

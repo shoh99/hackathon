@@ -69,6 +69,15 @@ def get_car_emission():
 
 
 
+@app.route('/api/v1/emission/transport/update')
+def update_transportation_data():
+    transport = request.args.get("transport")
+    data = request.args.get("data")
+
+    db.update_transport_data(transport, data)
+
+    return "success"
+
 
 # run the app
 if __name__ == '__main__':
