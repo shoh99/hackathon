@@ -9,7 +9,7 @@ def carbon_calculator(transportation, distance_in_m):
         total_gramm = int(result) * distance_in_km
         total_kg = round((total_gramm / 1000), 2)
 
-        return str(total_kg) + " kg"
+        return total_kg
     else:
         return f"{transportation} not found"
 
@@ -31,7 +31,7 @@ def carbon_calc_for_car(manufecturer,version, distance_in_m):
             total_gramm += int(wh_km) * distance_in_km
 
         total_kg = round((total_gramm / 1000), 2)
-        return str(total_kg) + "kg"
+        return total_kg
     
 
     else:
